@@ -2,23 +2,29 @@
 using System;
 using Harmony;
 using UnityEngine;
+using Il2Cpp;
 
-namespace DisableBreathEffect {
+namespace DisableBreathEffect
+{
 
-	internal class Mod : MelonMod {
-		public override void OnApplicationStart() {
-			Debug.Log($"[{InfoAttribute.Name}] Version {InfoAttribute.Version} loaded!");
-		}
-	}
+    internal class Mod : MelonMod
+    {
+        public override void OnApplicationStart()
+        {
+            Debug.Log($"[{InfoAttribute.Name}] Version {InfoAttribute.Version} loaded!");
+        }
+    }
 
-	[HarmonyPatch(typeof(Breath), "Start", new Type[0])]
-	internal static class DisableBreathEffectPatch {
+    [HarmonyPatch(typeof(Breath), "Start", new Type[0])]
+    internal static class DisableBreathEffectPatch
+    {
 
-		private static void Postfix(Breath __instance) {
-			__instance.m_ColdBreathTempThreshold = -float.MaxValue;
-			__instance.m_VeryColdBreathTempThreshold = -float.MaxValue;
-			__instance.m_FreezingBreathTempThreshold = -float.MaxValue;
-			__instance.StopBreathEffectImmediate();
-		}
-	}
+        private static void Postfix(Breath __instance)
+        {
+            __instance.m_ColdBreathTempThreshold = -float.MaxValue;
+            __instance.m_VeryColdBreathTempThreshold = -float.MaxValue;
+            __instance.m_FreezingBreathTempThreshold = -float.MaxValue;
+            __instance.StopBreathEffectImmediate();
+        }
+    }
 }
