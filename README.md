@@ -6,6 +6,8 @@ This breath effect is especially annoying in dark scenes, as it can completely o
 
 Finally, if you're using an older or integrated graphics card, installing this game may even improve the performance of your game.
 
+Special thanks to zeobviouslyfakeacc.
+
 ## Installation
 
 1. If you haven't done so already, install MelonLoader by downloading and running [MelonLoader.Installer.exe](https://github.com/HerpDerpinstine/MelonLoader/releases/latest/download/MelonLoader.Installer.exe)
